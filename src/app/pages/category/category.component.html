@@ -1,0 +1,51 @@
+<main id="main" class="main">
+<div class="pagetitle">
+  <h1>Категории</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Админка</a></li>
+      <li class="breadcrumb-item">Категории</li>
+    </ol>
+  </nav>
+</div>
+<section class="section">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-body" *ngIf="categories.length > 0">
+          <h5 class="card-title">Категории</h5>
+          <div>
+            <button type="button" class="btn btn-success" style="float: right" (click)="addCategory()">Добавить</button>
+          </div>
+          <table class="table table-striped" >
+            <thead>
+            <tr>
+              <th scope="col">Рубрика</th>
+              <th scope="col">Категория</th>
+              <th scope="col">Подкатегория</th>
+              <th scope="col">Действия</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let country of categories; index as i">
+              <td>
+
+                {{ country.mainCategory }}
+              </td>
+              <td>{{ country.category }}</td>
+              <td>{{ country.subCategory }}</td>
+              <td>
+                <i class="bi bi-pencil" style="color: orange" (click)="updateCategory(country)"></i>
+                <i class="bi bi-trash" style="color: red; margin-left: 10px"></i>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+</main>

@@ -1,0 +1,50 @@
+<section class="section">
+
+    <div class="content">
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Добавление новой категории</h5>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             {{chooseMenuItem}}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="javascript:void(0)" (click)="chooseMenu(m)" *ngFor="let m of menus">{{m}}</a>
+            </div>
+          </div>
+          <form [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <div class="row mb-3" *ngIf="chooseMenuItem === 'Рубрика'">
+              <label for="inputText1" class="col-form-label">Название рубрики</label>
+              <input type="text" class="form-control" id="inputText1" formControlName="mainCategory">
+            </div>
+          <select class="form-select" aria-label="Default select example" *ngIf="chooseMenuItem !== 'Рубрика'" style="margin-top: 20px"
+                  formControlName="mainCategory" (change)="changeCategory($event)">
+            <option *ngFor="let main of getMainCategories()" [ngValue]="main">
+              {{ main }}
+            </option>
+          </select>
+
+            <div class="row mb-3" *ngIf="chooseMenuItem === 'Рубрика' || chooseMenuItem === 'Категория'">
+              <label for="inputText2" class="col-form-label">Название категории</label>
+              <input type="text" class="form-control" id="inputText2" formControlName="category">
+            </div>
+          <select class="form-select form-select-sm" aria-label=".form-select-sm example"
+                  style="margin-top: 20px" *ngIf="chooseMenuItem === 'Подкатегория'"
+                  formControlName="category" (change)="changeMainCategory($event)">
+            <option *ngFor="let category of getCategories()" [ngValue]="category">
+              {{ category }}
+            </option>
+          </select>
+            <div class="row mb-3">
+              <label for="inputText" class="col-form-label">Название подкатегории</label>
+              <input type="text" class="form-control" id="inputText" formControlName="subCategory">
+            </div>
+            <input  class="btn btn-success" value="Добавить" type="submit" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+</section>
+
