@@ -33,7 +33,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           repository-name: ocpio/ocpio.github.io
-          branch: main
+          branch: admin
           folder: dist/AdminOcpio1
           target-folder: AdminOcpio1
           token: ${{ secrets.GH_TOKEN }}
