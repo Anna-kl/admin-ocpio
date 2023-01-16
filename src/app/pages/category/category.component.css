@@ -1,3 +1,6 @@
+.col-lg-6 {
+  width: 95%!important;
+}
 .btn-success {
   font-family: Raleway-SemiBold;
   font-size: 13px;

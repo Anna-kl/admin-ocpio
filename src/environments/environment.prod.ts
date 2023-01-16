@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  Uri: 'https://localhost:44326/admin/api/',
+  Uri: 'https://83.222.9.120/admin/api/',
 };

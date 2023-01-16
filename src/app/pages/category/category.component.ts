@@ -40,6 +40,7 @@ export class CategoryComponent implements OnInit {
   addCategory() {
     const modalRef = this.modalService.open(AddCategoryComponent);
     modalRef.componentInstance.categories = this.categories;
+    modalRef.componentInstance.token = this.token;
   }
 
   updateCategory(category: ICategoryView) {

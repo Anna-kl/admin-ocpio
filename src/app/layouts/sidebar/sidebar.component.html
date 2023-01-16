@@ -4,8 +4,8 @@
       <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#"> <i class="bi bi-menu-button-wide"></i>
         <span>Пользователи</span><i class="bi bi-chevron-down ms-auto"></i> </a>
       <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li> <a routerLink="/registrations"> <i class="bi bi-circle"></i><span>Регистрации</span> </a></li>
-        <li> <a routerLink="/users-profile"> <i class="bi bi-circle"></i><span>Профили (User)</span> </a></li>
+        <li> <a [routerLink]="['/registrations']" [state]="{token}"> <i class="bi bi-circle"></i><span>Регистрации</span> </a></li>
+        <li> <a [routerLink]="['/users-profile']" [state]="{token}"> <i class="bi bi-circle"></i><span>Профили (User)</span> </a></li>
         <!--             <li> <a routerLink="/badges"> <i class="bi bi-circle"></i><span>Badges</span> </a></li>-->
         <!--             <li> <a routerLink="/breadcrumbs"> <i class="bi bi-circle"></i><span>Breadcrumbs</span> </a></li>-->
         <!--             <li> <a routerLink="/buttons"> <i class="bi bi-circle"></i><span>Buttons</span> </a></li>-->

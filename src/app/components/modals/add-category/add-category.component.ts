@@ -19,6 +19,7 @@ export class AddCategoryComponent implements OnInit {
   @Input() categories: ICategoryView[] = [];
   @Input() chooseMenuItem = 'Выберите тип добавляемого объекта';
   @Input() category: ICategoryView|undefined = undefined;
+  @Input() token: string = '';
   categoryForm: FormGroup = this._builder.group({
     mainCategory: new FormControl(),
     category: new FormControl(),
@@ -64,7 +65,7 @@ export class AddCategoryComponent implements OnInit {
           break;
         }
       }
-      this._category.saveCategory(data as ICategoryView, param.toString()).subscribe(
+      this._category.saveCategory(data as ICategoryView, param.toString(), this.token).subscribe(
         result => {
           if (result !== 0){
             Swal.fire(

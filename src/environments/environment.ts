@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  Uri: 'https://localhost:44326/admin/api/',
+  Uri: 'https://83.222.9.120/admin/api/',
 };
 
 /*

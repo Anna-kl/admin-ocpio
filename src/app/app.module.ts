@@ -12,6 +12,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ReactiveFormsModule} from "@angular/forms";
 import {LoginComponent} from "./pages/login/login.component";
 import { RegistrationComponent } from './pages/users/registration/registration.component';
+import {BusService} from "./services/busEvents";
+import { AddRegistrationComponent } from './components/modals/add-registration/add-registration.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { RegistrationComponent } from './pages/users/registration/registration.c
     HeaderComponent,
     AddCategoryComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AddRegistrationComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -31,7 +34,7 @@ import { RegistrationComponent } from './pages/users/registration/registration.c
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [NgbDropdown],
+  providers: [NgbDropdown, BusService],
   bootstrap: [AppComponent],
   schemas: [
     NO_ERRORS_SCHEMA,
